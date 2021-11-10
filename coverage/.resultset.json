@@ -1,6 +1,36 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/ericchon/turing/1mod/enigma/spec/key_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ericchon/turing/1mod/enigma/lib/key.rb": {
         "lines": [
           1,
@@ -27,6 +57,6 @@
         ]
       }
     },
-    "timestamp": 1636582131
+    "timestamp": 1636585435
   }
 }
