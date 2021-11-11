@@ -14,7 +14,7 @@ class Key
     consecutive
   end
 
-  def keys_paired_to_letters  # break_keys_into_pairs.each do |key, value|
+  def key_paired_to_letters  # break_keys_into_pairs.each do |key, value|
     grouped_keys = Hash.new  #   grouped_keys[key] = value
     letter_key = ("A".."D") # {"A" => 0, "B" => 0, "C" => 0, "D" => O}
     letter_key.zip(break_keys_into_pairs).to_h  #key.zip(value).to_h

@@ -25,6 +25,6 @@ RSpec.describe Date do
 
   it "checks that the last four were assigned to letters" do
     expected = { "A" => '1', "B" => '0', "C" => '2', "D" => '5'}
-    expect(@date1.keys_paired_to_letters).to eq(expected)
+    expect(@date1.date_paired_to_letters).to eq(expected)
   end
 end

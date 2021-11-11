@@ -21,6 +21,6 @@ RSpec.describe Key do
   end
 
   it "groups the keys to Letters" do
-    expect(@key.keys_paired_to_letters).to be_a(Hash)
+    expect(@key.key_paired_to_letters).to be_a(Hash)
   end
 end
