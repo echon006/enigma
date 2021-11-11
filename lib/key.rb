@@ -1,5 +1,7 @@
 class Key
-attr_reader :keys
+  # include Module
+  attr_reader :keys
+
   def initialize
     @keys = rand.to_s[2..6]
   end
