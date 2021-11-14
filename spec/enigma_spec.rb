@@ -1,19 +1,47 @@
-# require 'simplecov'
-# SimpleCov.start
-#
-# require './lib/enigma'
-# require './lib/encrypt'
-# require './lib/decrypt'
-#
-# RSpec.describe Enigma do
-#   before :each do
-#     @enigma = Enigma.new
-#   end
-#
-#   it "exists" do
-#     expect(@enigma).to be_a(Enigma)
-#   end
-#
+require 'simplecov'
+SimpleCov.start
+
+require './lib/enigma'
+require './lib/decrypt'
+require './lib/encrypt'
+
+RSpec.describe Enigma do
+  before :each do
+    @enigma = Enigma.new
+    @encryption = Encrypt.new("hello world", "02715", "040895")
+    @decryption = Decrypt.new("keder ohulw", "02715", "040895")
+  end
+
+  it "exists" do
+    expect(@enigma).to be_a(Enigma)
+    expect(@enigma.encrypted_hash).to eq({
+      encryption: "",
+      key: "",
+      date: ""
+    })
+  end
+
+  it "checks that enigma is encrypting the message" do
+    expected = {
+    encryption: "keder ohulw",
+    key: "02715",
+    date: "040895"
+      }
+    expect(@enigma.encrypt("hello world", "02715", "040895")).to eq(expected)
+  end
+
+  it "checks that enigma is decrypting the message" do
+    expected = {
+    decryption: "hello world",
+    key: "02715",
+    date: "040895"
+      }
+    expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected)
+  end
+
+
+
+end
 #   it "has a alphabet set " do
 #     expect(@enigma.message).to eq("Hello")
 #     expect(@enigma.key).to eq("02715")
