@@ -3,14 +3,8 @@ class Decrypt
 
   def initialize(message, key, date)
     @alphabet = ("a".."z").to_a << " "
-    @key = if key == nil
-             key = rand.to_s[2..6]
-           else
-             key
-           end
-    @date = if date != nil
-              date
-            end
+    @key = key
+    @date = date
     @message = message
   end
 

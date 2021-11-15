@@ -1,5 +1,6 @@
-require './lib/decrypt'
-require './lib/encrypt'
+require './lib/decryption'
+require './lib/encryption'
+require 'date'
 
 class Enigma
   attr_reader :encrypted_hash, :decrypted_hash
@@ -32,6 +33,20 @@ class Enigma
     @decrypted_hash[:key] = key
     @decrypted_hash[:date] = date
     @decrypted_hash
+  end
+
+  def default_date
+    # date1 = Date.today doesnt work for me
+    time = Time.new
+    date_unstripped = time.strftime("%m/%d/%Y")
+    month = date_unstripped[0..1]
+    day = date_unstripped[3..4]
+    year = date_unstripped[8..9]
+    date = month + day + year
+  end
+
+  def default key
+
   end
 
 end

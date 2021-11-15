@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start
 
 require './lib/date'
-require './lib/encrypt'
+require './lib/encryption'
 
 RSpec.describe Encrypt do
   before :each do
