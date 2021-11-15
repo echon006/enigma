@@ -1,4 +1,4 @@
-class Decrypt
+class Decryption
   attr_reader :alphabet, :key, :date, :message
 
   def initialize(message, key, date)
@@ -76,7 +76,6 @@ class Decrypt
 
   def decrypt_message(message)
     index_decrypted(message).map do |letter|
-      # require "pry"; binding.pry
       @alphabet.rotate(letter).first
     end.join('')
   end

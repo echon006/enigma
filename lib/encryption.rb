@@ -1,13 +1,9 @@
-class Encrypt
+class Encryption
   attr_reader :alphabet, :key, :date, :message
 
   def initialize(message, key, date)
     @alphabet = ("a".."z").to_a << " "
-    @key = if key == nil
-            key = rand.to_s[2..6]
-          else
-            key
-          end
+    @key = key
     @date = date
     @message = message
   end

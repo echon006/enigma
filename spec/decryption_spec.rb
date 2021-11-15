@@ -4,14 +4,14 @@ SimpleCov.start
 require './lib/date'
 require './lib/decryption'
 
-RSpec.describe Decrypt do
+RSpec.describe Decryption do
   before :each do
 
-    @decrypt = Decrypt.new('keder', "02715", '040895')
+    @decrypt = Decryption.new('keder', "02715", '040895')
   end
 
   it "exists" do
-    expect(@decrypt).to be_a(Decrypt)
+    expect(@decrypt).to be_a(Decryption)
   end
 
   it "has a alphabet set " do

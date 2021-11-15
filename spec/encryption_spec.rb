@@ -4,9 +4,9 @@ SimpleCov.start
 require './lib/date'
 require './lib/encryption'
 
-RSpec.describe Encrypt do
+RSpec.describe Encryption do
   before :each do
-    @encrypt = Encrypt.new("hello", "02715", '040895')
+    @encrypt = Encryption.new("hello", "02715", '040895')
   end
 
   it "squares the number " do
@@ -23,7 +23,7 @@ RSpec.describe Encrypt do
   end
 
   it "exists" do
-    expect(@encrypt).to be_a(Encrypt)
+    expect(@encrypt).to be_a(Encryption)
   end
 
   it "checks that the key is being grouped by A..D" do
