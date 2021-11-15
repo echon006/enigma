@@ -15,7 +15,6 @@ class Enigma
       key: "",
       date: ""
     }
-
   end
 
   def encrypt(message, key = rand.to_s[2..6], date = default_date)
@@ -34,8 +33,7 @@ class Enigma
     @decrypted_hash
   end
 
-  def default_date
-    # date1 = Date.today doesnt work for me
+  def default_date # date1 = Date.today doesnt work for me
     time = Time.new
     date_unstripped = time.strftime("%m/%d/%Y")
     month = date_unstripped[0..1]
