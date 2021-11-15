@@ -52,7 +52,21 @@ RSpec.describe Enigma do
       }
     expect(@enigma.encrypt("hello world", "02715")).to eq(expected)
   end
-  
+
+  it "checks that enigma is encrypting the message and auto filling the date and key " do
+    expect(@enigma.encrypt("hello world")).to be_a(Hash)
+  end
+
+  it "checks that enigma is decrypting the message and auto filling the date " do
+    @enigma.encrypt("hello world", "02715")
+    expected = {
+    decryption: "hello world",
+    key: "02715",
+    date: "111521"
+      }
+    expect(@enigma.decrypt(@enigma.encrypted_hash[:encryption], "02715")).to eq(expected)
+  end
+
 end
 #   it "has a alphabet set " do
 #     expect(@enigma.message).to eq("Hello")
