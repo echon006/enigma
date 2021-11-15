@@ -44,6 +44,15 @@ RSpec.describe Enigma do
     expect(@enigma.default_date).to eq('111521')
   end
 
+  it "checks that enigma is encrypting the message and auto filling the date" do
+    expected = {
+    encryption: "mifatdqdwpy",
+    key: "02715",
+    date: "111521"
+      }
+    expect(@enigma.encrypt("hello world", "02715")).to eq(expected)
+  end
+  
 end
 #   it "has a alphabet set " do
 #     expect(@enigma.message).to eq("Hello")

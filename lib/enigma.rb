@@ -19,7 +19,7 @@ class Enigma
 
   end
 
-  def encrypt(message, key, date)
+  def encrypt(message, key = rand.to_s[2..6], date = default_date)
     encrypt = Encrypt.new(message, key, date)
     @encrypted_hash[:encryption] = encrypt.encrypt_message(message)
     @encrypted_hash[:key] = key
@@ -27,7 +27,7 @@ class Enigma
     @encrypted_hash
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key = rand.to_s[2..6], date = default_date)
     decrypt = Decrypt.new(message, key, date)
     @decrypted_hash[:decryption] = decrypt.decrypt_message(message)
     @decrypted_hash[:key] = key
